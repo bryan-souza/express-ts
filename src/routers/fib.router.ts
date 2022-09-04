@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { getFibSequence } from '../controllers/fib.controller';
+import { FibonacciController } from '../controllers/fib.controller';
 
 const fibRouter = Router();
+const fibController = new FibonacciController();
 
 // Route using req.params
-fibRouter.get('/:level', getFibSequence);
+fibRouter.get('/:level', fibController.get);
 
 export default fibRouter;
